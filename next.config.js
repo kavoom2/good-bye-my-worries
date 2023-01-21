@@ -1,11 +1,13 @@
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
+const path = require('path')
 
-const withPWA = require("next-pwa")({
-  dest: "public",
-  disable: process.env.NODE_ENV === "development",
-});
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+})
 
 /**
  * @type {import('next').NextConfig}
@@ -15,7 +17,7 @@ const nextConfig = {
   images: {},
   reactStrictMode: true,
   webpack: (config, context) => {
-    const { isServer } = context;
+    const { isServer } = context
 
     // Audio support
     config.module.rules.push({
@@ -23,58 +25,68 @@ const nextConfig = {
       exclude: config.exclude,
       use: [
         {
-          loader: require.resolve("url-loader"),
+          loader: require.resolve('url-loader'),
           options: {
             limit: config.inlineImageLimit,
-            fallback: require.resolve("file-loader"),
+            fallback: require.resolve('file-loader'),
             publicPath: `${config.assetPrefix}/_next/static/images/`,
-            outputPath: `${isServer ? "../" : ""}static/images/`,
-            name: "[name]-[hash].[ext]",
+            outputPath: `${isServer ? '../' : ''}static/images/`,
+            name: '[name]-[hash].[ext]',
             esModule: config.esModule || false,
           },
         },
       ],
-    });
+    })
 
     // Shader support
     config.module.rules.push({
       test: /\.(glsl|vs|fs|vert|frag)$/,
       exclude: /node_modules/,
-      use: ["raw-loader", "glslify-loader"],
-    });
+      use: ['raw-loader', 'glslify-loader'],
+    })
 
-    return config;
+    // Webpack alias
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, 'src'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@templates': path.resolve(__dirname, 'src/templates'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@libs': path.resolve(__dirname, 'src/libs'),
+    }
+
+    return config
   },
-};
+}
 
-const KEYS_TO_OMIT = [
-  "webpackDevMiddleware",
-  "configOrigin",
-  "target",
-  "analyticsId",
-  "webpack5",
-  "amp",
-  "assetPrefix",
-];
+if (process.env.EXPORT !== 'true') {
+  nextConfig.i18n = {
+    locales: ['en', 'jp'],
+    defaultLocale: 'en',
+  }
+}
+
+const KEYS_TO_OMIT = ['webpackDevMiddleware', 'configOrigin', 'target', 'analyticsId', 'webpack5', 'amp', 'assetPrefix']
 
 module.exports = (_phase, { defaultConfig }) => {
-  const plugins = [[withPWA], [withBundleAnalyzer, {}]];
+  const plugins = [[withPWA], [withBundleAnalyzer, {}]]
 
-  const wConfig = plugins.reduce(
-    (mergedConfig, [plugin, config]) => plugin({ ...mergedConfig, ...config }),
-    {
-      ...defaultConfig,
-      ...nextConfig,
-    }
-  );
+  const wConfig = plugins.reduce((mergedConfig, [plugin, config]) => plugin({ ...mergedConfig, ...config }), {
+    ...defaultConfig,
+    ...nextConfig,
+  })
 
-  const finalConfig = {};
+  const finalConfig = {}
 
   Object.keys(wConfig).forEach((key) => {
     if (!KEYS_TO_OMIT.includes(key)) {
-      finalConfig[key] = wConfig[key];
+      finalConfig[key] = wConfig[key]
     }
-  });
+  })
 
-  return finalConfig;
-};
+  return finalConfig
+}

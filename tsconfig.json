@@ -2,15 +2,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["src/*"],
       "@pages/*": ["src/pages/*"],
       "@components/*": ["src/components/*"],
       "@templates/*": ["src/templates/*"],
       "@styles/*": ["src/styles/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
-      "@queries/*": ["src/queries/*"],
-      "@libs/*": ["src/libs/*"],
-      "@root/*": ["src/*"]
+      "@assets/*": ["src/queries/*"],
+      "@libs/*": ["src/libs/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
