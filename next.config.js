@@ -16,6 +16,9 @@ const nextConfig = {
   experimental: {},
   images: {},
   reactStrictMode: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src/styles')],
+  },
   webpack: (config, context) => {
     const { isServer } = context
 

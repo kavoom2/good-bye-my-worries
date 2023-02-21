@@ -79,6 +79,7 @@ const usePostProcess = () => {
 
     return [screenCamera, screenScene, screen, renderTarget]
   }, [])
+  
   useEffect(() => {
     const { width, height } = size
     const { w, h } = {
