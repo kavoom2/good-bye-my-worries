@@ -1,0 +1,137 @@
+{
+  "sheetsById": {
+    "Demo Sheet": {
+      "staticOverrides": {
+        "byObject": {
+          "Cube": {
+            "position": {
+              "x": 1.0500000000000071,
+              "y": 0,
+              "z": 0
+            }
+          }
+        }
+      },
+      "sequence": {
+        "subUnitsPerUnit": 30,
+        "length": 10,
+        "type": "PositionalSequence",
+        "tracksByObject": {
+          "Cube": {
+            "trackData": {
+              "WcPxHNcfO4": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cube:[\"position\",\"x\"]",
+                "keyframes": [
+                  {
+                    "id": "u42Urk28mI",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": 3.172659477879178
+                  },
+                  {
+                    "id": "oSXGrWQ0FI",
+                    "position": 1.333,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": 0.21216974002282618
+                  },
+                  {
+                    "id": "sUVrbBLbfC",
+                    "position": 2.533,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": -0.2932758951771197
+                  },
+                  {
+                    "id": "2J1jvO6MDs",
+                    "position": 3.367,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": -2.707275025282546
+                  }
+                ]
+              },
+              "GrEq-Ekylk": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cube:[\"position\",\"y\"]",
+                "keyframes": [
+                  {
+                    "id": "qeMl8yCx96",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": -0.19385520153531033
+                  },
+                  {
+                    "id": "RB3xGm0uWd",
+                    "position": 1.333,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": 0.5878302599771859
+                  },
+                  {
+                    "id": "t1SR5GM67J",
+                    "position": 2.533,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": 0.5878302599771859
+                  },
+                  {
+                    "id": "-Wn1UxtYsv",
+                    "position": 3.367,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": 1.6594955522127415
+                  }
+                ]
+              },
+              "cpx1GRDOTi": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Cube:[\"position\",\"z\"]",
+                "keyframes": [
+                  {
+                    "id": "huI0ikWGew",
+                    "position": 0,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": 1.922715937125894
+                  },
+                  {
+                    "id": "ePWkHv-UrU",
+                    "position": 1.333,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": -1.790530056071234
+                  },
+                  {
+                    "id": "yeoOISk5ib",
+                    "position": 2.533,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": 1.8220255872007594
+                  },
+                  {
+                    "id": "9uMHZe12sX",
+                    "position": 3.367,
+                    "connectedRight": true,
+                    "handles": [0.5, 1, 0.5, 0],
+                    "value": -5.449487938243787
+                  }
+                ]
+              }
+            },
+            "trackIdByPropPath": {
+              "[\"position\",\"x\"]": "WcPxHNcfO4",
+              "[\"position\",\"y\"]": "GrEq-Ekylk",
+              "[\"position\",\"z\"]": "cpx1GRDOTi"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitionVersion": "0.4.0",
+  "revisionHistory": ["jCQihBnrFWC2oaCo"]
+}
