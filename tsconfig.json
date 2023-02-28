@@ -10,7 +10,8 @@
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
       "@assets/*": ["src/queries/*"],
-      "@libs/*": ["src/libs/*"]
+      "@libs/*": ["src/libs/*"],
+      "@stores/*": ["src/stores/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",

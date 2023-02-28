@@ -60,6 +60,7 @@ const nextConfig = {
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@libs': path.resolve(__dirname, 'src/libs'),
+      '@stores': path.resolve(__dirname, 'src/stores'),
     }
 
     return config
